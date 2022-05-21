@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Tweet } from './Tweet';
 import ListHeader from './ListHeader';
+import { ListSeparator } from '../utils/ListSeparator';
 
 
 export interface ITweet {
@@ -51,13 +52,13 @@ export default function TweetList() {
     return (
         <FlatList
             ListHeaderComponent={ListHeader}
-            style={styles.listContainer}
+            ItemSeparatorComponent={() => <ListSeparator />}
             data={tweets} renderItem={({ item }) => <Tweet {...item} />} keyExtractor={(item) => item.id.toString()} />
     )
 }
 
 const styles = StyleSheet.create({
     listContainer: {
-        marginHorizontal: 10
+        // marginHorizontal: 10
     }
 })

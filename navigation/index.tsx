@@ -37,10 +37,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   );
 }
 
-/**
- * A root stack navigator is often used for displaying modals on top of all other content.
- * https://reactnavigation.org/docs/modal
- */
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
@@ -48,22 +45,6 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{
         headerShown: false
-        // headerLeft: () => (
-        //   <Pressable style={{ backgroundColor: '#fff' }} onPress={() => { }}>
-        //     <Image source={{ uri: 'https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png' }} style={{ width: 30, height: 30, borderRadius: 500, marginLeft: 10 }} />
-        //   </Pressable>
-        // ),
-        // headerTitle: () => <FontAwesome name="twitter" size={30} color="#1D9BF0" />,
-        // headerRight: () => (
-        //   <Pressable
-        //     onPress={() => { }}
-        //     style={({ pressed }) => ({
-        //       opacity: pressed ? 0.5 : 1,
-        //       marginRight: 10
-        //     })}>
-        //     <MaterialCommunityIcons name="chart-timeline-variant-shimmer" size={24} color="black" />
-        //   </Pressable>
-        // ),
       }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
@@ -94,27 +75,8 @@ function BottomTabNavigator() {
         name="TabOne"
         component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          headerShown: false
-          // title: 'Tab Ones',
-          // tabBarIcon: ({ color }) => <Feather name="home" size={24} color="black" />,
-          // headerTransparent: true,
-          // headerTitleAlign: 'center',
-          // headerLeft: () => (
-          //   <Pressable style={{ backgroundColor: '#fff' }} onPress={() => { }}>
-          //     <Image source={{ uri: 'https://toppng.com/uploads/preview/instagram-default-profile-picture-11562973083brycehrmyv.png' }} style={{ width: 30, height: 30, borderRadius: 500, marginLeft: 10 }} />
-          //   </Pressable>
-          // ),
-          // headerTitle: () => <FontAwesome name="twitter" size={30} color="#1D9BF0" />,
-          // headerRight: () => (
-          //   <Pressable
-          //     onPress={() => navigation.navigate('Modal')}
-          //     style={({ pressed }) => ({
-          //       opacity: pressed ? 0.5 : 1,
-          //       marginRight: 10
-          //     })}>
-          //     <MaterialCommunityIcons name="chart-timeline-variant-shimmer" size={24} color="black" />
-          //   </Pressable>
-          // ),
+          headerShown: false,
+          tabBarIcon: ({ color }) => <Feather name="home" size={24} color="black" />,
         })}
       />
       <BottomTab.Screen
