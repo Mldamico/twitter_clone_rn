@@ -1,7 +1,7 @@
-import { StyleSheet, Text, Image, Pressable, View } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons'
+import React from 'react'
+import { Image, Pressable, StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ListHeader = () => {
     return (

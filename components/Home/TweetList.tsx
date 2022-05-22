@@ -1,54 +1,16 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Tweet } from './Tweet';
-import ListHeader from './ListHeader';
+import React from 'react';
+import { FlatList, StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 import { ListSeparator } from '../utils/ListSeparator';
+import ListHeader from './ListHeader';
+import { Tweet } from './Tweet';
 
 
-export interface ITweet {
-    id: number
-    user: string;
-    name: string;
-    profileImg: string;
-    message: string;
-    messageImg: string
-}
-
-const tweets: ITweet[] = [{
-    id: 1,
-    user: 'HBOMaxLa',
-    name: 'HBO Max Latinoamerica',
-    profileImg: 'https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png',
-    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore delectus sunt doloremque aliquam! Ipsam cumque quos perspiciatis voluptate culpa maxime nostrum at praesentium ullam ad, voluptas incidunt assumenda dicta minima.',
-    messageImg: 'https://d500.epimg.net/cincodias/imagenes/2021/10/05/lifestyle/1633443991_639304_1633444188_noticia_normal.jpg'
-},
-{
-    id: 2,
-    user: 'HBOMaxLa',
-    name: 'HBO Max Latinoamerica',
-    profileImg: 'https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png',
-    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore delectus sunt doloremque aliquam! Ipsam cumque quos perspiciatis voluptate culpa maxime nostrum at praesentium ullam ad, voluptas incidunt assumenda dicta minima.',
-    messageImg: 'https://d500.epimg.net/cincodias/imagenes/2021/10/05/lifestyle/1633443991_639304_1633444188_noticia_normal.jpg'
-},
-{
-    id: 3,
-    user: 'HBOMaxLa',
-    name: 'HBO Max Latinoamerica',
-    profileImg: 'https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png',
-    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore delectus sunt doloremque aliquam! Ipsam cumque quos perspiciatis voluptate culpa maxime nostrum at praesentium ullam ad, voluptas incidunt assumenda dicta minima.',
-    messageImg: 'https://d500.epimg.net/cincodias/imagenes/2021/10/05/lifestyle/1633443991_639304_1633444188_noticia_normal.jpg'
-},
-{
-    id: 4,
-    user: 'HBOMaxLa',
-    name: 'HBO Max Latinoamerica',
-    profileImg: 'https://hbomax-images.warnermediacdn.com/2020-05/square%20social%20logo%20400%20x%20400_0.png',
-    message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore delectus sunt doloremque aliquam! Ipsam cumque quos perspiciatis voluptate culpa maxime nostrum at praesentium ullam ad, voluptas incidunt assumenda dicta minima.',
-    messageImg: 'https://d500.epimg.net/cincodias/imagenes/2021/10/05/lifestyle/1633443991_639304_1633444188_noticia_normal.jpg'
-}]
 
 
 export default function TweetList() {
+    const { tweets } = useSelector((state: RootState) => state.tweet)
     return (
         <FlatList
             ListHeaderComponent={ListHeader}

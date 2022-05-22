@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
-import { EvilIcons, Fontisto, MaterialCommunityIcons } from '@expo/vector-icons';
-import { ITweet } from './TweetList';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
 import TweetTextFooterItem from './TweetTextFooterItem';
+import { ITweet } from '../../typings/ITweet';
 
 
 export const Tweet = ({ name, profileImg, message, messageImg, user }: ITweet) => {
